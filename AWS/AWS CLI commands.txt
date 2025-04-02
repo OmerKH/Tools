@@ -1,0 +1,20 @@
+sudo su -
+yum install -y docker
+systemctl start docker
+systemctl enable docker
+docker run -d -p 80:80 nginx
+docker ps
+
+#########################################################################
+running instance with ubuntu
+#########################################################################
+
+
+aws ec2 run-instances \
+--image-id ami-04b4f1a9cf54c11d0 \
+--count 1 \
+--instance-type t2.micro \
+--key-name ansible \
+--security-group-ids sg-0be127501da1a88fb \
+
+
