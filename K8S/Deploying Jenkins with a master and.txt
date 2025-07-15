@@ -1,0 +1,9 @@
+Deploying Jenkins with a master and slave configuration :
+
+- minikube start
+- helm repo add jenkins https://charts.jenkins.io
+- helm repo update
+- kubectl create namespace jenkins
+- helm install jenkins jenkins/jenkins --namespace jenkins
+- kubectl get secret --namespace jenkins jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode
+- kubectl port-forward --namespace jenkins svc/jenkins 8080:8080

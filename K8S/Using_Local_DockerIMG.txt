@@ -1,0 +1,5 @@
+In the deployment.yaml:
+
+containers:
+	-name: "DockerIMG NAME"
+ 	 imagePullPolicy: Never
